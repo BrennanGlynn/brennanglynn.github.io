@@ -79,7 +79,7 @@ const Details = () => {
       </div>
 
       <section className="contact">
-        <a className="contact" href="mailto:brennanglynn@u.boisestate.edu">
+        <a className="contact" href="mailto:glynnbrennan@gmail.com">
           contact
         </a>
       </section>
