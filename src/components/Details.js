@@ -60,8 +60,7 @@ const Details = () => {
     <section className={styles}>
       <Typography variant="h3">
         Brennan Glynn <br />
-        Engineer at <br />
-        <a href="https://clickbank.com">ClickBank</a>
+        Software Engineer
       </Typography>
 
       <div className="links">
