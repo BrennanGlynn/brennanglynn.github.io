@@ -1,6 +1,6 @@
 import React from 'react'
 import { css } from 'emotion'
-import Typography from '@material-ui/core/Typography'
+import { Typography } from '@mui/material'
 import resume from '../assets/resume.pdf'
 
 const styles = css`
