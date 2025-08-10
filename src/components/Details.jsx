@@ -1,7 +1,8 @@
-import React from 'react'
-import { css } from 'emotion'
-import { Typography } from '@mui/material'
-import resume from '../assets/resume.pdf'
+// Details.jsx (Emotion Only)
+
+import React from 'react';
+import { css } from 'emotion';
+import resume from '../assets/resume.pdf';
 
 const styles = css`
   display: flex;
@@ -10,7 +11,7 @@ const styles = css`
 
   a {
     color: #111;
-    font-family: helvetica neue, helvetica, sans-serif;
+    font-family: 'helvetica neue', helvetica, sans-serif;
     transition: color 0.15s ease-in;
     text-decoration: none;
   }
@@ -19,10 +20,13 @@ const styles = css`
     color: #aaa;
   }
 
-  .MuiTypography-h3 {
+  .title {
+    /* These styles replicate the MUI h3 variant and your overrides */
+    margin: 0; /* h1 has default margins, so we reset them */
+    font-family: 'helvetica neue', helvetica, sans-serif;
     font-weight: 700;
     font-size: 2.25rem;
-    font-family: helvetica neue, helvetica, sans-serif;
+    line-height: 1.2;
     text-transform: uppercase;
     letter-spacing: -0.1rem;
   }
@@ -53,15 +57,15 @@ const styles = css`
   .contact {
     font-weight: 700;
   }
-`
+`;
 
 const Details = () => {
   return (
     <section className={styles}>
-      <Typography variant="h3">
+      <h1 className="title">
         Brennan Glynn <br />
         Software Engineer
-      </Typography>
+      </h1>
 
       <div className="links">
         <ul>
@@ -72,18 +76,20 @@ const Details = () => {
             <a href="https://github.com/brennanglynn">github</a>
           </li>
           <li>
-            <a href={resume}>resume</a>
+            <a href={resume} target="_blank" rel="noopener noreferrer">
+              resume
+            </a>
           </li>
         </ul>
       </div>
 
       <section className="contact">
-        <a className="contact" href="mailto:glynnbrennan@gmail.com">
+        <a href="mailto:glynnbrennan@gmail.com">
           contact
         </a>
       </section>
     </section>
-  )
-}
+  );
+};
 
-export default Details
+export default Details;
