@@ -1,68 +1,72 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Brennan Glynn - Personal Portfolio
+
+This repository contains the source code for my personal portfolio website, built with React and Vite.
+
+
+
+## Live Demo
+
+The live version of this project is hosted on GitHub Pages.
+
+**[View Live Site](https://brennanglynn.github.io/)**
+
+---
+
+## Features
+
+* **Modern Tech Stack**: Built with Vite and React for a fast and efficient development experience.
+* **Styled with Emotion**: Utilizes the Emotion library for flexible and maintainable CSS-in-JS styling.
+* **Responsive Design**: A clean layout that is fully responsive and mobile-friendly.
+* **Automated Deployments**: Deploys automatically to GitHub Pages using the `gh-pages` package.
+
+---
+
+## Getting Started
+
+To get a local copy up and running, follow these simple steps.
+
+### Prerequisites
+
+You'll need to have [Node.js](https://nodejs.org/en/) (which includes npm) and [Yarn](https://yarnpkg.com/) installed on your machine.
+
+### Installation
+
+1.  Clone the repo:
+    ```sh
+    git clone [https://github.com/brennanglynn/brennanglynn.github.io/](https://github.com/brennanglynn/brennanglynn.github.io/.git)
+    ```
+2.  Navigate to the project directory:
+    ```sh
+    cd brennanglynn.github.io/
+    ```
+3.  Install NPM packages:
+    ```sh
+    yarn install
+    ```
+
+---
 
 ## Available Scripts
 
-In the project directory, you can run:
+In the project directory, you can run the following commands:
 
 ### `yarn start`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Runs the app in development mode. Open [http://localhost:5173](http://localhost:5173) (or the URL provided in your terminal) to view it in the browser. The page will reload if you make edits.
 
 ### `yarn build`
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Builds the app for production to the `dist` folder. It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+### `yarn deploy`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Deploys the contents of the `dist` folder to the `gh-pages` branch, which updates the live site. This script automatically runs `yarn build` before deploying.
 
-### `yarn eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Tech Stack
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+* **[React](https://reactjs.org/)**: A JavaScript library for building user interfaces.
+* **[Vite](https://vitejs.dev/)**: A next-generation front-end tooling that provides a faster and leaner development experience.
+* **[Emotion](https://emotion.sh/)**: A library designed for writing CSS styles with JavaScript.
+* **[GitHub Pages](https://pages.github.com/)**: Used for hosting the live site.
