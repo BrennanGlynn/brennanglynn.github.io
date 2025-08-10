@@ -1,8 +1,8 @@
 // Details.jsx (Emotion Only)
 
-import React from 'react';
-import { css } from 'emotion';
-import resume from '../assets/resume.pdf';
+import React from 'react'
+import { css } from 'emotion'
+import resume from '../assets/resume.pdf'
 
 const styles = css`
   display: flex;
@@ -57,7 +57,7 @@ const styles = css`
   .contact {
     font-weight: 700;
   }
-`;
+`
 
 const Details = () => {
   return (
@@ -84,12 +84,10 @@ const Details = () => {
       </div>
 
       <section className="contact">
-        <a href="mailto:glynnbrennan@gmail.com">
-          contact
-        </a>
+        <a href="mailto:glynnbrennan@gmail.com">contact</a>
       </section>
     </section>
-  );
-};
+  )
+}
 
-export default Details;
+export default Details
