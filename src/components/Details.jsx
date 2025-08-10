@@ -1,14 +1,11 @@
-// Details.jsx (Emotion Only)
+// src/components/Details.jsx
 
 import React from 'react'
+import PropTypes from 'prop-types'
 import { css } from 'emotion'
 import resume from '../assets/resume.pdf'
 
 const styles = css`
-  display: flex;
-  flex-direction: column;
-  padding-top: 4rem;
-
   a {
     color: #111;
     font-family: 'helvetica neue', helvetica, sans-serif;
@@ -18,17 +15,6 @@ const styles = css`
 
   a:hover {
     color: #aaa;
-  }
-
-  .title {
-    /* These styles replicate the MUI h3 variant and your overrides */
-    margin: 0; /* h1 has default margins, so we reset them */
-    font-family: 'helvetica neue', helvetica, sans-serif;
-    font-weight: 700;
-    font-size: 2.25rem;
-    line-height: 1.2;
-    text-transform: uppercase;
-    letter-spacing: -0.1rem;
   }
 
   .links {
@@ -59,21 +45,39 @@ const styles = css`
   }
 `
 
-const Details = () => {
+const Details = ({ onNavigate }) => {
   return (
     <section className={styles}>
-      <h1 className="title">
-        Brennan Glynn <br />
-        Software Engineer
-      </h1>
-
       <div className="links">
         <ul>
           <li>
-            <a href="https://linkedin.com/in/brennanglynn">linkedin</a>
+            <a
+              href="https://linkedin.com/in/brennanglynn"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              linkedin
+            </a>
           </li>
           <li>
-            <a href="https://github.com/brennanglynn">github</a>
+            <a
+              href="https://github.com/brennanglynn"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              github
+            </a>
+          </li>
+          <li>
+            <a
+              href="#projects"
+              onClick={e => {
+                e.preventDefault()
+                onNavigate('projects')
+              }}
+            >
+              projects
+            </a>
           </li>
           <li>
             <a href={resume} target="_blank" rel="noopener noreferrer">
@@ -91,3 +95,7 @@ const Details = () => {
 }
 
 export default Details
+
+Details.propTypes = {
+  onNavigate: PropTypes.func.isRequired,
+}
