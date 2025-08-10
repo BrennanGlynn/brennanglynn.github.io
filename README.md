@@ -21,7 +21,7 @@ This process ensures that the live site is always in sync with the latest stable
 ## Links
 
 * **Live Site:** **[https://brennanglynn.github.io/your-repo-name/](https://brennanglynn.github.io/)**
-* **Source Code:** For all development, please see the **[../tree/main](../tree/main)**.
+* **Source Code:** For all development, please see the **[../main](../main)**.
 
 ---
 
