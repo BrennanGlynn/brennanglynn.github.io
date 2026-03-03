@@ -22,6 +22,7 @@
           window.history.replaceState(null, null,
               '/' + decoded + l.hash
           );
+          if (l.pathname !== '/' + decoded) window.location.replace('/' + decoded + l.hash);
         }
       }(window.location))
 </script>
