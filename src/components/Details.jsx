@@ -1,5 +1,3 @@
-// Details.jsx (Emotion Only)
-
 import React from 'react'
 import { css } from 'emotion'
 import { Link } from 'react-router-dom'
@@ -8,11 +6,17 @@ import resume from '../assets/resume.pdf'
 const styles = css`
   display: flex;
   flex-direction: column;
+  background: #fff;
+  font-family: 'helvetica neue', helvetica, sans-serif;
+
+  /* Sync with PrinterDashboard */
+  max-width: 800px;
+  margin: 0 auto;
   padding-top: 4rem;
+  width: 100%;
 
   a {
     color: #111;
-    font-family: 'helvetica neue', helvetica, sans-serif;
     transition: color 0.15s ease-in;
     text-decoration: none;
   }
@@ -22,9 +26,7 @@ const styles = css`
   }
 
   .title {
-    /* These styles replicate the MUI h3 variant and your overrides */
-    margin: 0; /* h1 has default margins, so we reset them */
-    font-family: 'helvetica neue', helvetica, sans-serif;
+    margin: 0;
     font-weight: 700;
     font-size: 2.25rem;
     line-height: 1.2;
@@ -48,8 +50,6 @@ const styles = css`
       margin-top: 0.5rem;
       a {
         font-weight: 400;
-        transition: color 0.15s ease-in;
-        text-decoration: none;
         text-transform: lowercase;
       }
     }

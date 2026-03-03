@@ -9,12 +9,33 @@ const styles = css`
   font-family: 'helvetica neue', helvetica, sans-serif;
   max-width: 800px;
   margin: 0 auto;
-  padding-top: 4rem;
+  padding-top: 4rem; /* Matches Details.jsx padding */
   width: 100%;
+  position: relative; /* Allows absolute positioning for the back link */
+
+  .back-link {
+    position: absolute;
+    top: 1.5rem; /* Floats above the 4rem padding area */
+    left: 0;
+
+    a {
+      display: inline-flex;
+      color: #111;
+      transition: color 0.15s ease-in;
+      &:hover {
+        color: #aaa;
+      }
+    }
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
 
   .view-container {
     width: 100%;
-    min-height: 200px; /* Safety net */
+    min-height: 200px;
     display: flex;
     flex-direction: column;
   }
@@ -26,7 +47,8 @@ const styles = css`
   .title {
     margin: 0;
     font-weight: 700;
-    font-size: 1.5rem;
+    font-size: 2.25rem; /* Matches your bio h1 size exactly */
+    line-height: 1.2;
     text-transform: uppercase;
     letter-spacing: -0.1rem;
     color: #111;
@@ -65,7 +87,9 @@ const styles = css`
 
     p {
       text-transform: lowercase;
-      font-size: 0.75rem;
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: #111;
     }
   }
 
@@ -82,7 +106,7 @@ const styles = css`
 
   .progress-section {
     margin-top: 1.5rem;
-    height: 30px; /* Fixed height to prevent jumps */
+    height: 30px;
   }
 
   .progress-labels {
@@ -103,25 +127,6 @@ const styles = css`
     height: 100%;
     background: #111;
     transition: width 1s ease-in-out;
-  }
-
-  .back-link {
-    margin-top: 4rem;
-    margin-bottom: 2rem;
-
-    a {
-      display: inline-flex;
-      color: #111;
-      transition: color 0.15s ease-in;
-      &:hover {
-        color: #aaa;
-      }
-    }
-
-    svg {
-      width: 24px;
-      height: 24px;
-    }
   }
 `
 
@@ -144,7 +149,7 @@ const PrinterDashboard = () => {
         const data = await response.json()
 
         setPrinterData({
-          isOnline: true,
+          isOnline: data.isOnline,
           isPrinting: data.isPrinting,
           status: data.state.toLowerCase(),
           progress: parseFloat(data.progress) || 0,
@@ -190,6 +195,7 @@ const PrinterDashboard = () => {
           </svg>
         </Link>
       </div>
+
       <div className="view-container">
         {!printerData.isOnline ? (
           <div className="offline-view">
