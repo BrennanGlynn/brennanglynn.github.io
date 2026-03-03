@@ -2,6 +2,7 @@
 
 import React from 'react'
 import { css } from 'emotion'
+import { Link } from 'react-router-dom'
 import resume from '../assets/resume.pdf'
 
 const styles = css`
@@ -79,6 +80,9 @@ const Details = () => {
             <a href={resume} target="_blank" rel="noopener noreferrer">
               resume
             </a>
+          </li>
+          <li>
+            <Link to="/stream">3d print stream</Link>
           </li>
         </ul>
       </div>
