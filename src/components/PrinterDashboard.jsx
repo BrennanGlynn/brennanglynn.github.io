@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from 'react'
-import { css } from 'emotion'
+import { css, keyframes } from 'emotion' // Imported keyframes for the blinking animation
 import { Link } from 'react-router-dom'
+
+// Keyframe animation for the live dot to pulse on/off
+const blink = keyframes`
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+`
 
 const styles = css`
   display: flex;
@@ -71,6 +77,7 @@ const styles = css`
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative; /* Added relative positioning to anchor the absolute badge */
   }
 
   .offline-placeholder {
@@ -97,11 +104,38 @@ const styles = css`
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: grayscale(80%);
-    transition: filter 0.4s ease;
-    &:hover {
-      filter: grayscale(0%);
-    }
+    /* Removed default grayscale filter */
+    /* Removed transition properties as they are no longer needed without filters */
+  }
+
+  /* NEW CSS: Styling for the Live Badge overlay */
+  .live-badge {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: rgba(17, 17, 17, 0.7); /* Translucent background */
+    color: #fff;
+    padding: 0.4rem 0.6rem;
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+    z-index: 10; /* Ensures it floats above the video feed */
+    pointer-events: none; /* Allows user to click "through" the badge to the image on mobile */
+  }
+
+  /* NEW CSS: Styling for the red pulsing dot */
+  .live-dot {
+    height: 8px;
+    width: 8px;
+    background-color: #ff4136; /* Red color */
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 0.5rem;
+    animation: ${blink} 1.5s step-start infinite; /* Applied blinking keyframe animation */
   }
 
   .progress-section {
@@ -138,7 +172,10 @@ const PrinterDashboard = () => {
     progress: 0,
   })
 
+  // The proxy handles authorization for the main site data.
   const WORKER_URL = 'https://octoprint-status-proxy.glynnbrennan.workers.dev/'
+  
+  // The stream URL now handles authorization via the 'Octoprint Webcam' Zero Trust application.
   const STREAM_URL = 'https://cam.brennanglynn.com/?action=stream'
 
   useEffect(() => {
@@ -229,6 +266,11 @@ const PrinterDashboard = () => {
               </div>
             </div>
             <div className="stream-container">
+              <div className="live-badge">
+                <span className="live-dot" />
+                Live
+              </div>
+              
               <img
                 src={`${STREAM_URL}&${new Date().getTime()}`}
                 alt="printer stream"
