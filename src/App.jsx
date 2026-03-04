@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 import { css } from 'emotion'
 import Details from './components/Details'
 import PrinterDashboard from './components/PrinterDashboard'
@@ -28,6 +28,7 @@ function App() {
       >
         <article className={pageLayout}>
           <Routes>
+            <Route path="/index.html" element={<Navigate to="/" replace/>} />
             <Route path="/" element={<Details />} />
             <Route path="/stream" element={<PrinterDashboard />} />
           </Routes>

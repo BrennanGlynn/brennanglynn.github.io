@@ -174,7 +174,7 @@ const PrinterDashboard = () => {
 
   // The proxy handles authorization for the main site data.
   const WORKER_URL = 'https://octoprint-status-proxy.glynnbrennan.workers.dev/'
-  
+
   // The stream URL now handles authorization via the 'Octoprint Webcam' Zero Trust application.
   const STREAM_URL = 'https://cam.brennanglynn.com/?action=stream'
 
@@ -270,7 +270,7 @@ const PrinterDashboard = () => {
                 <span className="live-dot" />
                 Live
               </div>
-              
+
               <img
                 src={`${STREAM_URL}&${new Date().getTime()}`}
                 alt="printer stream"
