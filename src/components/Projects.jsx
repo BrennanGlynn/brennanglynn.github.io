@@ -35,6 +35,10 @@ const sectionStyles = css`
     border-bottom: 1px solid #eee;
     padding-bottom: 0.5rem;
     margin-bottom: 2rem;
+
+    @media (prefers-color-scheme: dark) {
+      border-bottom-color: #111;
+    }
   }
 `
 
@@ -48,6 +52,14 @@ const backLinkStyles = css`
 
   &:hover {
     color: #111;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    color: #ccc;
+
+    &:hover {
+      color: #eee;
+    }
   }
 `
 
@@ -75,6 +87,10 @@ const projectCardStyles = css`
     height: auto;
     border-radius: 8px;
     border: 1px solid #e0e0e0;
+
+    @media (prefers-color-scheme: dark) {
+      border-color: #1f1f1f;
+    }
   }
 
   h3 {
@@ -87,6 +103,10 @@ const projectCardStyles = css`
     color: #333;
     line-height: 1.6;
     margin: 0 0 1rem 0;
+
+    @media (prefers-color-scheme: dark) {
+      color: #ccc;
+    }
   }
 
   .stack {
@@ -97,10 +117,16 @@ const projectCardStyles = css`
 
     span {
       background-color: #f0f0f0;
+      color: #000;
       padding: 0.25rem 0.75rem;
       border-radius: 4px;
       font-size: 0.8rem;
       font-family: 'SF Mono', 'Menlo', 'monospace';
+
+      @media (prefers-color-scheme: dark) {
+        background-color: #0f0f0f;
+        color: #fff;
+      }
     }
   }
 
@@ -108,6 +134,20 @@ const projectCardStyles = css`
     margin-right: 1.5rem;
     font-weight: 700;
     font-size: 0.9rem;
+    color: #111;
+    text-decoration: none;
+
+    &:hover {
+      color: #aaa;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      color: #eee;
+
+      &:hover {
+        color: #555;
+      }
+    }
   }
 `
 

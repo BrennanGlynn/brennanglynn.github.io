@@ -11,6 +11,11 @@ const styles = css`
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
+  color: #000;
+
+  @media (prefers-color-scheme: dark) {
+    color: #fff;
+  }
 
   h1 {
     font-weight: 700;

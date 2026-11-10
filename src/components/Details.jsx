@@ -11,10 +11,18 @@ const styles = css`
     font-family: 'helvetica neue', helvetica, sans-serif;
     transition: color 0.15s ease-in;
     text-decoration: none;
+
+    @media (prefers-color-scheme: dark) {
+      color: #eee;
+    }
   }
 
   a:hover {
     color: #aaa;
+
+    @media (prefers-color-scheme: dark) {
+      color: #555;
+    }
   }
 
   .links {
@@ -45,6 +53,7 @@ const styles = css`
   }
 `
 
+// eslint-disable-next-line no-unused-vars
 const Details = ({ onNavigate }) => {
   return (
     <section className={styles}>
@@ -68,7 +77,7 @@ const Details = ({ onNavigate }) => {
               github
             </a>
           </li>
-          <li>
+          {/* <li>
             <a
               href="#projects"
               onClick={e => {
@@ -78,7 +87,7 @@ const Details = ({ onNavigate }) => {
             >
               projects
             </a>
-          </li>
+          </li> */}
           <li>
             <a href={resume} target="_blank" rel="noopener noreferrer">
               resume
