@@ -12,7 +12,8 @@
     "@testing-library/user-event": "^7.1.2",
     "emotion": "^10.0.27",
     "react": "^19.1.1",
-    "react-dom": "^19.1.1"
+    "react-dom": "^19.1.1",
+    "react-router-dom": "^7.13.1"
   },
   "scripts": {
     "start": "vite",

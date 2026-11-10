@@ -1,6 +1,6 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { css } from 'emotion'
+import { Link } from 'react-router-dom'
 import PlateCalculatorScreenshots from '../assets/PlateCalcScreenshots.png'
 
 const projectData = [
@@ -151,19 +151,12 @@ const projectCardStyles = css`
   }
 `
 
-const Projects = ({ onNavigate }) => {
+const Projects = () => {
   return (
     <section className={sectionStyles}>
-      <a
-        href="#home"
-        className={backLinkStyles}
-        onClick={e => {
-          e.preventDefault()
-          onNavigate('home')
-        }}
-      >
+      <Link to="/" className={backLinkStyles}>
         &larr; Back to Home
-      </a>
+      </Link>
 
       <h2>Projects</h2>
       {projectData.map(project => (
@@ -206,7 +199,3 @@ const Projects = ({ onNavigate }) => {
 }
 
 export default Projects
-
-Projects.propTypes = {
-  onNavigate: PropTypes.func.isRequired,
-}

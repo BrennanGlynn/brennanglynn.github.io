@@ -1,14 +1,26 @@
-// src/components/Details.jsx
-
 import React from 'react'
-import PropTypes from 'prop-types'
 import { css } from 'emotion'
+import { Link } from 'react-router-dom'
 import resume from '../assets/resume.pdf'
 
 const styles = css`
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  font-family: 'helvetica neue', helvetica, sans-serif;
+
+  /* Sync with PrinterDashboard */
+  max-width: 800px;
+  margin: 0 auto;
+  padding-top: 4rem;
+  width: 100%;
+
+  @media (prefers-color-scheme: dark) {
+    background: #000;
+  }
+
   a {
     color: #111;
-    font-family: 'helvetica neue', helvetica, sans-serif;
     transition: color 0.15s ease-in;
     text-decoration: none;
 
@@ -23,6 +35,15 @@ const styles = css`
     @media (prefers-color-scheme: dark) {
       color: #555;
     }
+  }
+
+  .title {
+    margin: 0;
+    font-weight: 700;
+    font-size: 2.25rem;
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: -0.1rem;
   }
 
   .links {
@@ -41,8 +62,6 @@ const styles = css`
       margin-top: 0.5rem;
       a {
         font-weight: 400;
-        transition: color 0.15s ease-in;
-        text-decoration: none;
         text-transform: lowercase;
       }
     }
@@ -53,10 +72,14 @@ const styles = css`
   }
 `
 
-// eslint-disable-next-line no-unused-vars
-const Details = ({ onNavigate }) => {
+const Details = () => {
   return (
     <section className={styles}>
+      <h1 className="title">
+        Brennan Glynn <br />
+        Software Engineer
+      </h1>
+
       <div className="links">
         <ul>
           <li>
@@ -78,20 +101,15 @@ const Details = ({ onNavigate }) => {
             </a>
           </li>
           {/* <li>
-            <a
-              href="#projects"
-              onClick={e => {
-                e.preventDefault()
-                onNavigate('projects')
-              }}
-            >
-              projects
-            </a>
+            <Link to="/projects">projects</Link>
           </li> */}
           <li>
             <a href={resume} target="_blank" rel="noopener noreferrer">
               resume
             </a>
+          </li>
+          <li>
+            <Link to="/stream">3d print stream</Link>
           </li>
         </ul>
       </div>
@@ -104,7 +122,3 @@ const Details = ({ onNavigate }) => {
 }
 
 export default Details
-
-Details.propTypes = {
-  onNavigate: PropTypes.func.isRequired,
-}
