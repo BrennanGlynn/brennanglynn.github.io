@@ -19,6 +19,10 @@ const styles = css`
   width: 100%;
   position: relative; /* Allows absolute positioning for the back link */
 
+  @media (prefers-color-scheme: dark) {
+    background: #000;
+  }
+
   .back-link {
     position: absolute;
     top: 1.5rem; /* Floats above the 4rem padding area */
@@ -30,6 +34,13 @@ const styles = css`
       transition: color 0.15s ease-in;
       &:hover {
         color: #aaa;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        color: #eee;
+        &:hover {
+          color: #555;
+        }
       }
     }
 
@@ -58,6 +69,10 @@ const styles = css`
     text-transform: uppercase;
     letter-spacing: -0.1rem;
     color: #111;
+
+    @media (prefers-color-scheme: dark) {
+      color: #eee;
+    }
   }
 
   .status-text {
@@ -65,6 +80,10 @@ const styles = css`
     text-transform: lowercase;
     color: #aaa;
     margin-top: 0.25rem;
+
+    @media (prefers-color-scheme: dark) {
+      color: #666;
+    }
   }
 
   .stream-container,
@@ -78,12 +97,22 @@ const styles = css`
     align-items: center;
     justify-content: center;
     position: relative; /* Added relative positioning to anchor the absolute badge */
+
+    @media (prefers-color-scheme: dark) {
+      background: #0a0a0a;
+      border-color: #1f1f1f;
+    }
   }
 
   .offline-placeholder {
     flex-direction: column;
     color: #ccc;
     background: #fafafa;
+
+    @media (prefers-color-scheme: dark) {
+      color: #444;
+      background: #0a0a0a;
+    }
 
     svg {
       width: 48px;
@@ -97,6 +126,10 @@ const styles = css`
       font-size: 0.875rem;
       font-weight: 700;
       color: #111;
+
+      @media (prefers-color-scheme: dark) {
+        color: #eee;
+      }
     }
   }
 
@@ -155,12 +188,20 @@ const styles = css`
     height: 1px;
     width: 100%;
     background: #eee;
+
+    @media (prefers-color-scheme: dark) {
+      background: #222;
+    }
   }
 
   .progress-bar-fill {
     height: 100%;
     background: #111;
     transition: width 1s ease-in-out;
+
+    @media (prefers-color-scheme: dark) {
+      background: #eee;
+    }
   }
 `
 

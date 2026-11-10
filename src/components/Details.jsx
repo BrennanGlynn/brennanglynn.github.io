@@ -15,14 +15,26 @@ const styles = css`
   padding-top: 4rem;
   width: 100%;
 
+  @media (prefers-color-scheme: dark) {
+    background: #000;
+  }
+
   a {
     color: #111;
     transition: color 0.15s ease-in;
     text-decoration: none;
+
+    @media (prefers-color-scheme: dark) {
+      color: #eee;
+    }
   }
 
   a:hover {
     color: #aaa;
+
+    @media (prefers-color-scheme: dark) {
+      color: #555;
+    }
   }
 
   .title {
@@ -71,11 +83,26 @@ const Details = () => {
       <div className="links">
         <ul>
           <li>
-            <a href="https://linkedin.com/in/brennanglynn">linkedin</a>
+            <a
+              href="https://linkedin.com/in/brennanglynn"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              linkedin
+            </a>
           </li>
           <li>
-            <a href="https://github.com/brennanglynn">github</a>
+            <a
+              href="https://github.com/brennanglynn"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              github
+            </a>
           </li>
+          {/* <li>
+            <Link to="/projects">projects</Link>
+          </li> */}
           <li>
             <a href={resume} target="_blank" rel="noopener noreferrer">
               resume
